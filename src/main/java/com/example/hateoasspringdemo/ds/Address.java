@@ -1,5 +1,6 @@
 package com.example.hateoasspringdemo.ds;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,7 @@ public class Address {      //one customer has many addresses
 
     @ManyToOne(fetch = FetchType.EAGER)      //many is owner and mappedBy is reversed owner
     @JoinColumn(name = "customer_id")
+    @JsonIgnore
     private Customer customer;
 
     @Override

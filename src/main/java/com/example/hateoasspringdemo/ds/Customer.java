@@ -1,5 +1,6 @@
 package com.example.hateoasspringdemo.ds;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,7 @@ public class Customer {
     private String code;
     private String firstName;
     private String lastName;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Address> addresses=
             new ArrayList<>();
